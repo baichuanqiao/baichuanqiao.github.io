@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://yoursite.com/2016/12/12/hello-world/</url>
+      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>A short description of hexo<a id="more"></a><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</excerpt></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[markdown格式测试]]></title>
+      <url>http://yoursite.com/2016/09/21/markdown/</url>
+      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>Markdown格式测试<a id="more"></a># 这里是一级标题</excerpt></p>
+<h3 id="这里是三级标题"><a href="#这里是三级标题" class="headerlink" title="这里是三级标题"></a>这里是三级标题</h3><h6 id="这里是六级标题，就到这里了，木有七级！"><a href="#这里是六级标题，就到这里了，木有七级！" class="headerlink" title="这里是六级标题，就到这里了，木有七级！"></a>这里是六级标题，就到这里了，木有七级！</h6><p>段落前面没有缩进，看到了吧。</p>
+<h1 id="233"><a href="#233" class="headerlink" title="233"></a>233</h1><h2 id="222222"><a href="#222222" class="headerlink" title="222222"></a>222222</h2><p>　　要想使用缩进，在中文输入法中改成「全角」输入，再按两个空格</p>
+<p>行尾一个回车换行，显示效果依然是是一行。<br>我说的对吧~</p>
+<p>想要分成两行，需要在行尾输入两个空格。<br>我说的对吧~</p>
+<p>想要开始一个新的段落，乖乖的按两下回车吧</p>
+<p>我说的对吧~</p>
+<p><strong>两个星号包围的是粗体</strong></p>
+<p><em>一个星号包围的是斜体</em></p>
+<blockquote>
+<p>引用内容，多行的话，用两个空格结尾吧<br>是吧~</p>
+</blockquote>
+<p><code>反引号包围的是行内代码</code>，这个按键在「Tab」上边</p>
+<p><code>嵌套的话，可以使用`两个双引号`嵌套在外面</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#三个反引号包围的是代码块。</span></div><div class="line"><span class="comment">#会显示行号。</span></div><div class="line"><span class="comment">#也有高亮显示</span></div><div class="line"><span class="comment">#我上面加了python，你也可以不加。如果不能高亮，那么还是加上吧。。另外，如果你的代码块包围的是html，那你应该写html而不是python</span></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">print</span> os.sep</div></pre></td></tr></table></figure>
+<p>嵌套的话，可以使用六个反引号嵌套在外面。</p>
+<ol>
+<li>有序列表1，注意点之后的空格。</li>
+<li>有序列表2.</li>
+<li><p>我这里写成1，在显示时还是3，厉害不。</p>
+</li>
+<li><p>有序列表1<br>详细内容，注意前面有一个空格</p>
+</li>
+<li>有序列表2<br>详细内容</li>
+</ol>
+<ul>
+<li>无序列表1</li>
+<li>无序列表2</li>
+<li>无序列表3<ul>
+<li>小1，注意前面有一个空格</li>
+<li>小2</li>
+</ul>
+</li>
+</ul>
+<p>超级链接：<a href="http://qiaobaichuan.com" target="_blank" rel="external">我的博客</a></p>
+<p>插入图片：<img src="http://ww2.sinaimg.cn/large/5e8cb366jw1e62o63tkv3j20dh078q5a.jpg" alt="好看不"></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
