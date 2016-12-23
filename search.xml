@@ -20,6 +20,12 @@
     
     <entry>
       <title><![CDATA[markdown格式测试]]></title>
+      <url>http://yoursite.com/2016/09/21/Sublime%20Text%203%E5%85%A5%E5%9D%91%E5%B0%8F%E8%AE%B0/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[markdown格式测试]]></title>
       <url>http://yoursite.com/2016/09/21/markdown/</url>
       <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>Markdown格式测试<a id="more"></a># 这里是一级标题</excerpt></p>
 <h3 id="这里是三级标题"><a href="#这里是三级标题" class="headerlink" title="这里是三级标题"></a>这里是三级标题</h3><h6 id="这里是六级标题，就到这里了，木有七级！"><a href="#这里是六级标题，就到这里了，木有七级！" class="headerlink" title="这里是六级标题，就到这里了，木有七级！"></a>这里是六级标题，就到这里了，木有七级！</h6><p>段落前面没有缩进，看到了吧。</p>
