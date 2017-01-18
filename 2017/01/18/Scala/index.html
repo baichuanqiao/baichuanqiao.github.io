@@ -3,14 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | baichuan upup</title>
+  <title>基于Intellij IDEA的Spark开发-Scala | baichuan upup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="baichuan upup">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="用Scala写一些Spark小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Intellij IDEA的Spark开发-Scala">
+<meta property="og:url" content="http://yoursite.com/2017/01/18/Scala/index.html">
 <meta property="og:site_name" content="baichuan upup">
+<meta property="og:description" content="用Scala写一些Spark小程序">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/005PiU9ugy1fbv9yhljmjj30bf0ez0t7.jpg">
+<meta property="og:updated_time" content="2017-01-18T17:11:35.510Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="baichuan upup">
+<meta name="twitter:title" content="基于Intellij IDEA的Spark开发-Scala">
+<meta name="twitter:description" content="用Scala写一些Spark小程序">
+<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/005PiU9ugy1fbv9yhljmjj30bf0ez0t7.jpg">
   
     <link rel="alternative" href="/atom.xml" title="baichuan upup" type="application/atom+xml">
   
@@ -36,8 +42,8 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
-          isArchive: true,
+          isPost: true,
+          isArchive: false,
           isTag: false,
           isCategory: false,
           open_in_new: null
@@ -210,138 +216,203 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Scala" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/18/Scala/" class="archive-article-date">
-      <time datetime="2017-01-18T03:28:03.000Z" itemprop="datePublished">01-18</time>
+    <div class="article-meta">
+      <a href="/2017/01/18/Scala/" class="article-date">
+      <time datetime="2017-01-18T03:28:03.000Z" itemprop="datePublished">2017-01-18</time>
 </a>
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/18/Scala/">基于Intellij IDEA的Spark开发-Scala</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基于Intellij IDEA的Spark开发-Scala
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/Spark/">Spark</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Scala/">Scala</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+      </div>
       
-        </div></section>
+    
+    <div class="article-entry" itemprop="articleBody">
       
+          
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>用Scala写一些Spark小程序<a id="more"></a></excerpt></p>
+<h2 id="开发语言的选择"><a href="#开发语言的选择" class="headerlink" title="开发语言的选择"></a>开发语言的选择</h2><p>Spark开发语言可以选择Scala，Java和Python。虽然相对而言更熟悉Java一点，最终还是决定选择scala作为spark的主要开发语言。原因有以下几个：</p>
+<ol>
+<li>Scala是Spark的原生语言，兼容性最强,据说性能也更好。</li>
+<li>这学期研讨内容就是Scala,如果不结合点大数据相关的内容而是单纯介绍这门语言的话会十分无趣，也说明不了Scala的价值所在。</li>
+<li>Scala是基于JVM的，方便兼容其他基于Java语言的大数据系统。</li>
+<li>Scala有逼格啊hhh，不是还有人说有望成为下一代的Java吗！</li>
+</ol>
+<h2 id="Scala环境配置"><a href="#Scala环境配置" class="headerlink" title="Scala环境配置"></a>Scala环境配置</h2><p>首先你想用Scala的话请确保已经安装了JDK1.5以上版本，用过Java同学的这步就可以跳过了，然后去<a href="http://www.scala-lang.org/" target="_blank" rel="external">官网</a>下载二进制安装包然后配置环境变量啊balabala我就不说了–，网上都有。这里就提一下用到的编译器IntelliJ  IDEA中直接安装Scala插件，不得不说这款编译器是我继VS后遇到的第二款宇宙级IDE，反正用它敲代码比Eclipse效率要高一些(比如代码补全就更加智能一些)。<a href="https://www.jetbrains.com/idea/" target="_blank" rel="external">IntelliJ  IDEA</a>是JetBrains公司开发的一系列编程工具中的一款，面向社会的话是收费的，不过对我们大学生的话可以用学生邮箱注册免费使用！安装后我们打开File-Settings-Plugins，下方找到Install Jetbrains plugins然后输入Scala就能找到插件了，我们不妨看看Scala的流行程度吧。<br><img src="http://wx4.sinaimg.cn/mw690/005PiU9ugy1fbv9yhljmjj30bf0ez0t7.jpg" alt="插件下载量排名"></p>
+<p>图上可见Scala下载量是最多的，究其原因也是和最近大数据的热门有关。</p>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/12/23/Sublime Text 3入坑小记/" class="archive-article-date">
-      <time datetime="2016-12-23T03:28:03.000Z" itemprop="datePublished">12-23</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/23/Sublime Text 3入坑小记/">Sublime Text 3入坑小记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/常用工具/">常用工具</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/12/20/markdown/" class="archive-article-date">
-      <time datetime="2016-12-20T12:33:02.000Z" itemprop="datePublished">12-20</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/20/markdown/">markdown格式测试</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/常用工具/">常用工具</a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/01/18/Scala/">基于Intellij IDEA的Spark开发-Scala</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 baichuan 的个人博客">baichuan</a></p>
+        <p><span>发布时间:</span>2017年01月18日 - 11时28分</p>
+        <p><span>最后更新:</span>2017年01月19日 - 01时11分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/01/18/Scala/" title="基于Intellij IDEA的Spark开发-Scala">http://yoursite.com/2017/01/18/Scala/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/01/18/Scala/　　作者: baichuan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
-    </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/23/Sublime Text 3入坑小记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sublime Text 3入坑小记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发语言的选择"><span class="toc-number">1.</span> <span class="toc-text">开发语言的选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scala环境配置"><span class="toc-number">2.</span> <span class="toc-text">Scala环境配置</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2017/01/18/Scala/" data-title="基于Intellij IDEA的Spark开发-Scala" data-url="http://yoursite.com/2017/01/18/Scala/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"baichuan"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
 
     
 
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/12/23/Sublime Text 3入坑小记/" title="下一篇: Sublime Text 3入坑小记">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/18/Scala/">基于Intellij IDEA的Spark开发-Scala</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/23/Sublime Text 3入坑小记/">Sublime Text 3入坑小记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/20/markdown/">markdown格式测试</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
@@ -406,17 +477,6 @@
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

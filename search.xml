@@ -4,6 +4,22 @@
   
     
     <entry>
+      <title><![CDATA[基于Intellij IDEA的Spark开发-Scala]]></title>
+      <url>http://yoursite.com/2017/01/18/Scala/</url>
+      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>用Scala写一些Spark小程序<a id="more"></a></excerpt></p>
+<h2 id="开发语言的选择"><a href="#开发语言的选择" class="headerlink" title="开发语言的选择"></a>开发语言的选择</h2><p>Spark开发语言可以选择Scala，Java和Python。虽然相对而言更熟悉Java一点，最终还是决定选择scala作为spark的主要开发语言。原因有以下几个：</p>
+<ol>
+<li>Scala是Spark的原生语言，兼容性最强,据说性能也更好。</li>
+<li>这学期研讨内容就是Scala,如果不结合点大数据相关的内容而是单纯介绍这门语言的话会十分无趣，也说明不了Scala的价值所在。</li>
+<li>Scala是基于JVM的，方便兼容其他基于Java语言的大数据系统。</li>
+<li>Scala有逼格啊hhh，不是还有人说有望成为下一代的Java吗！</li>
+</ol>
+<h2 id="Scala环境配置"><a href="#Scala环境配置" class="headerlink" title="Scala环境配置"></a>Scala环境配置</h2><p>首先你想用Scala的话请确保已经安装了JDK1.5以上版本，用过Java同学的这步就可以跳过了，然后去<a href="http://www.scala-lang.org/" target="_blank" rel="external">官网</a>下载二进制安装包然后配置环境变量啊balabala我就不说了–，网上都有。这里就提一下用到的编译器IntelliJ  IDEA中直接安装Scala插件，不得不说这款编译器是我继VS后遇到的第二款宇宙级IDE，反正用它敲代码比Eclipse效率要高一些(比如代码补全就更加智能一些)。<a href="https://www.jetbrains.com/idea/" target="_blank" rel="external">IntelliJ  IDEA</a>是JetBrains公司开发的一系列编程工具中的一款，面向社会的话是收费的，不过对我们大学生的话可以用学生邮箱注册免费使用！安装后我们打开File-Settings-Plugins，下方找到Install Jetbrains plugins然后输入Scala就能找到插件了，我们不妨看看Scala的流行程度吧。<br><img src="http://wx4.sinaimg.cn/mw690/005PiU9ugy1fbv9yhljmjj30bf0ez0t7.jpg" alt="插件下载量排名"></p>
+<p>图上可见Scala下载量是最多的，究其原因也是和最近大数据的热门有关。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Sublime Text 3入坑小记]]></title>
       <url>http://yoursite.com/2016/12/23/Sublime%20Text%203%E5%85%A5%E5%9D%91%E5%B0%8F%E8%AE%B0/</url>
       <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>记录一下自己捣腾Sublime的过程和遇到的问题<a id="more"></a></excerpt></p>
