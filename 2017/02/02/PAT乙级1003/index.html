@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode-Java题解(1) | baichuan upup</title>
+  <title>PAT乙级题解(1003) | baichuan upup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode第一题">
+  <meta name="description" content="PAT乙级题解1003">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-Java题解(1)">
-<meta property="og:url" content="http://yoursite.com/2017/01/31/LeetCode1/index.html">
+<meta property="og:title" content="PAT乙级题解(1003)">
+<meta property="og:url" content="http://yoursite.com/2017/02/02/PAT乙级1003/index.html">
 <meta property="og:site_name" content="baichuan upup">
-<meta property="og:description" content="LeetCode第一题">
-<meta property="og:updated_time" content="2017-01-31T14:12:04.075Z">
+<meta property="og:description" content="PAT乙级题解1003">
+<meta property="og:updated_time" content="2017-02-02T16:39:47.012Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-Java题解(1)">
-<meta name="twitter:description" content="LeetCode第一题">
+<meta name="twitter:title" content="PAT乙级题解(1003)">
+<meta name="twitter:description" content="PAT乙级题解1003">
   
     <link rel="alternative" href="/atom.xml" title="baichuan upup" type="application/atom+xml">
   
@@ -214,11 +214,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-PAT乙级1003" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/31/LeetCode1/" class="article-date">
-      <time datetime="2017-01-31T13:02:03.000Z" itemprop="datePublished">2017-01-31</time>
+      <a href="/2017/02/02/PAT乙级1003/" class="article-date">
+      <time datetime="2017-02-02T11:40:00.000Z" itemprop="datePublished">2017-02-02</time>
 </a>
     </div>
   
@@ -231,7 +231,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode-Java题解(1)
+      PAT乙级题解(1003)
     </h1>
   
 
@@ -240,13 +240,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    <a class="article-category-link" href="/categories/PAT乙级/">PAT乙级</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HashMap/">HashMap</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -256,13 +256,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>LeetCode第一题<a id="more"></a></excerpt></p>
-<p>题目链接：<a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">https://leetcode.com/problems/two-sum/</a></p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>大致意思是给定一个int数组，和一个 int target值，数组中有两个值的和为target ,给出这两个值的下标，你可以认为解只有一个。</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>Given nums = [2, 7, 11, 15], target = 9,<br>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>刷的第一题，因为用Java解题，属于边学边做的过程，可以很简单的用两个循环解题但是时间复杂度较高，参照网上比较有效率的解法用map解,感觉自己对于Java中的一些数据结构还要多学习。</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int[] twoSum(int[] numbers, int target) &#123;</div><div class="line">        HashMap&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;();</div><div class="line">        <span class="keyword">for</span> (int i = 0; i &lt; numbers.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (map.get(numbers[i]) != null) &#123;</div><div class="line">                int[] result = &#123;map.get(numbers[i]),i&#125;;</div><div class="line">                <span class="built_in">return</span> result;</div><div class="line">            &#125;</div><div class="line">            map.put(target - numbers[i], i);</div><div class="line">        &#125;</div><div class="line">        int[] result = &#123;&#125;;</div><div class="line">        <span class="built_in">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>PAT乙级题解1003<a id="more"></a></excerpt></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>“答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于PAT的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。</p>
+<p>得到“答案正确”的条件是：</p>
+<ol>
+<li>字符串中必须仅有P, A, T这三种字符，不可以包含其它字符；</li>
+<li>任意形如 xPATx 的字符串都可以获得“答案正确”，其中 x 或者是空字符串，或者是仅由字母 A 组成的字符串；</li>
+<li>如果 aPbTc 是正确的，那么 aPbATca 也是正确的，其中 a, b, c 均或者是空字符串，或者是仅由字母 A 组成的字符串。</li>
+</ol>
+<p>现在就请你为PAT写一个自动裁判程序，判定哪些字符串是可以获得“答案正确”的。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>每个测试输入包含1个测试用例。第1行给出一个自然数n (&lt;10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过100，且不包含空格。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>每个字符串的检测结果占一行，如果该字符串可以获得“答案正确”，则输出YES，否则输出NO。</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><p>8<br>PAT<br>PAAT<br>AAPATAA<br>AAPAATAAAA<br>xPATx<br>PT<br>Whatever<br>APAAATAA</p>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><p>YES<br>YES<br>YES<br>YES<br>NO<br>NO<br>NO<br>NO</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>由条件2知<br>PAT<br>APATA<br>AAPATAA<br>AAAPATAAA<br>这些都是正确的答案，再由条件3得<br>PAT —— 对于aPbTc来说ac是空，b是A。所以 PAAT 是正确的。同理PAAAAAT中间加多少个A都是正确的<br>APATA —— 对于aPbTc来说，abc都是A。所以 APAATAA 是正确的。再类推一下，那么 APAAATAAA 是正确的<br>AAPATAA —— 对于aPbTc来说，a和c是AA，b是A。所以AAPAATAAAA是正确的，再类推一下，AAPAAATAAAAAA 是正确的。所以说规律就是，可以在P和T中间加A并且在T后面加A，要求必须是，中间加上一个A，末尾就得加上几倍的P前面A的那个字符串，很巧的是当中间A为一个的时候，末尾和开头A的个数必须相等正好是第二条的要求。总结起来就是：只能有一个P一个T，中间末尾和开头可以随便插入A。但是必须满足开头的A的个数 * 中间的A的个数 = 结尾的A的个数</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#include &lt;iostream&gt;</span></div><div class="line"><span class="comment">#include &lt;string&gt;</span></div><div class="line"><span class="comment">#include &lt;string.h&gt;</span></div><div class="line">using namespace std;</div><div class="line">int <span class="function"><span class="title">main</span></span>() &#123;</div><div class="line">	int n;</div><div class="line">	char s[101];</div><div class="line">	scanf(<span class="string">"%d"</span>, &amp;n);</div><div class="line">	<span class="keyword">for</span> (int i = 0; i&lt;n; i++) &#123;</div><div class="line">		bool result = <span class="literal">true</span>;</div><div class="line">		int count1 = 0, count2 = 0, count3 = 0;</div><div class="line">		int countP = 0, countT = 0;</div><div class="line">		scanf(<span class="string">"%s"</span>, s);</div><div class="line">		<span class="keyword">for</span> (int j = 0; j&lt;strlen(c); j++) &#123;</div><div class="line">			<span class="keyword">if</span> (c[j] != <span class="string">'P'</span> &amp;&amp; c[j] != <span class="string">'A'</span> &amp;&amp; c[j] != <span class="string">'T'</span>) &#123;</div><div class="line">				result = <span class="literal">false</span>;</div><div class="line">				<span class="built_in">break</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span> (c[j] == <span class="string">'P'</span>) &#123;</div><div class="line">				countP++;</div><div class="line">				<span class="keyword">if</span> (countP == 2) &#123;</div><div class="line">					result = <span class="literal">false</span>;</div><div class="line">					<span class="built_in">break</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span> (c[j] == <span class="string">'T'</span>) &#123;</div><div class="line">				countT++;</div><div class="line">				<span class="keyword">if</span> (countT == 2) &#123;</div><div class="line">					result = <span class="literal">false</span>;</div><div class="line">					<span class="built_in">break</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (result) &#123;</div><div class="line">			string s = c;</div><div class="line">			count1 = s.find(<span class="string">"P"</span>);</div><div class="line">			count2 = s.find(<span class="string">"A"</span>);</div><div class="line">			count3 = s.find(<span class="string">"T"</span>);</div><div class="line">			<span class="keyword">if</span> (count1 == -1 || count2 == -1 || count3 == -1) &#123;</div><div class="line">				result = <span class="literal">false</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> &#123;</div><div class="line">				result = ((count1 * (count3 - count1 - 1)) == (strlen(c) - count3 - 1)) ? <span class="literal">true</span> : <span class="literal">false</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (result) &#123;</div><div class="line">			cout &lt;&lt; <span class="string">"YES"</span>&lt;&lt;endl;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			cout &lt;&lt; <span class="string">"NO"</span>&lt;&lt;endl;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">return</span> 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -270,13 +278,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/01/31/LeetCode1/">LeetCode-Java题解(1)</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/02/PAT乙级1003/">PAT乙级题解(1003)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 baichuan 的个人博客">baichuan</a></p>
-        <p><span>发布时间:</span>2017年01月31日 - 21时02分</p>
-        <p><span>最后更新:</span>2017年01月31日 - 22时12分</p>
+        <p><span>发布时间:</span>2017年02月02日 - 19时40分</p>
+        <p><span>最后更新:</span>2017年02月03日 - 00时39分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/01/31/LeetCode1/" title="LeetCode-Java题解(1)">http://yoursite.com/2017/01/31/LeetCode1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/01/31/LeetCode1/　　作者: baichuan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/02/PAT乙级1003/" title="PAT乙级题解(1003)">http://yoursite.com/2017/02/02/PAT乙级1003/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/02/02/PAT乙级1003/　　作者: baichuan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -289,18 +297,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/02/01/LeetCode2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          LeetCode-Java题解(2)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/18/Scala/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于Intellij IDEA的Spark开发-Scala</div>
+    <a href="/2017/02/01/LeetCode2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode-Java题解(2)</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -311,7 +310,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">2.</span> <span class="toc-text">Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">3.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">4.</span> <span class="toc-text">算法</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输入格式"><span class="toc-number">2.</span> <span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出格式"><span class="toc-number">3.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输入样例"><span class="toc-number">4.</span> <span class="toc-text">输入样例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出样例"><span class="toc-number">5.</span> <span class="toc-text">输出样例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">6.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">7.</span> <span class="toc-text">算法</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -359,7 +358,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2017/01/31/LeetCode1/" data-title="LeetCode-Java题解(1)" data-url="http://yoursite.com/2017/01/31/LeetCode1/"></div>
+    <div class="ds-thread" data-thread-key="2017/02/02/PAT乙级1003/" data-title="PAT乙级题解(1003)" data-url="http://yoursite.com/2017/02/02/PAT乙级1003/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -382,13 +381,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/01/LeetCode2/" title="上一篇: LeetCode-Java题解(2)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/01/18/Scala/" title="下一篇: 基于Intellij IDEA的Spark开发-Scala">
+            <a href="/2017/02/01/LeetCode2/" title="下一篇: LeetCode-Java题解(2)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
