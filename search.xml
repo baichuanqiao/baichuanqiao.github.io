@@ -4,6 +4,17 @@
   
     
     <entry>
+      <title><![CDATA[LeetCode-Java题解(242)]]></title>
+      <url>http://yoursite.com/2017/02/16/LeetCode242/</url>
+      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>LeetCode242题<a id="more"></a></excerpt></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given two strings s and t, write a function to determine if t is an anagram of s.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>s = “anagram”, t = “nagaram”, return true.<br>s = “rat”, t = “car”, return false.</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>把两个字符串按字典序排序后比较即可，注意Java中若是两个字符串比较是否相等不能直接用s1==s2来判断，因为s1和s2均为对象，可用s1.equals(s2)来判断</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution242 &#123;</div><div class="line">    public static boolean isAnagram(String s, String t) &#123;</div><div class="line">        char []temp1 = s.toCharArray();</div><div class="line">        char []temp2 = t.toCharArray();</div><div class="line">        Arrays.sort(temp1);</div><div class="line">        Arrays.sort(temp2);</div><div class="line">        <span class="keyword">if</span>(Arrays.equals(temp1,temp2))&#123;</div><div class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[LeetCode-Java题解(49)]]></title>
       <url>http://yoursite.com/2017/02/16/LeetCode49/</url>
       <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>LeetCode第49题:Group Anagrams<a id="more"></a><br>题目链接：<a href="https://leetcode.com/problems/anagrams/" target="_blank" rel="external">https://leetcode.com/problems/anagrams/</a></excerpt></p>

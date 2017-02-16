@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tags | baichuan upup</title>
+  <title>LeetCode-Java题解(242) | baichuan upup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="LeetCode242题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode-Java题解(242)">
+<meta property="og:url" content="http://yoursite.com/2017/02/16/LeetCode242/index.html">
 <meta property="og:site_name" content="baichuan upup">
-<meta property="og:updated_time" content="2016-12-12T11:36:12.622Z">
+<meta property="og:description" content="LeetCode242题">
+<meta property="og:updated_time" content="2017-02-16T14:55:55.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="LeetCode-Java题解(242)">
+<meta name="twitter:description" content="LeetCode242题">
   
     <link rel="alternative" href="/atom.xml" title="baichuan upup" type="application/atom+xml">
   
@@ -37,7 +40,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -211,11 +214,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode242" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2016-12-12T11:36:12.000Z" itemprop="datePublished">2016-12-12</time>
+      <a href="/2017/02/16/LeetCode242/" class="article-date">
+      <time datetime="2017-02-16T14:50:00.000Z" itemprop="datePublished">2017-02-16</time>
 </a>
     </div>
   
@@ -228,7 +231,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      LeetCode-Java题解(242)
     </h1>
   
 
@@ -236,8 +239,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -245,120 +256,79 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>LeetCode242题<a id="more"></a></excerpt></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given two strings s and t, write a function to determine if t is an anagram of s.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>s = “anagram”, t = “nagaram”, return true.<br>s = “rat”, t = “car”, return false.</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>把两个字符串按字典序排序后比较即可，注意Java中若是两个字符串比较是否相等不能直接用s1==s2来判断，因为s1和s2均为对象，可用s1.equals(s2)来判断</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution242 &#123;</div><div class="line">    public static boolean isAnagram(String s, String t) &#123;</div><div class="line">        char []temp1 = s.toCharArray();</div><div class="line">        char []temp2 = t.toCharArray();</div><div class="line">        Arrays.sort(temp1);</div><div class="line">        Arrays.sort(temp2);</div><div class="line">        <span class="keyword">if</span>(Arrays.equals(temp1,temp2))&#123;</div><div class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 
-
-    <!-- Tag Cloud Page -->
-    <hr>
-    <br>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PAT乙级/">PAT乙级</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spark/">Spark</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用工具/">常用工具</a><span class="category-list-count">2</span></li></ul>
-
-    <p class="count"></p>
-
-    <div class="tags">
-        <a href="/tags/C/" style="font-size: 16px; color: #808080">C++</a> <a href="/tags/HashMap/" style="font-size: 16px; color: #808080">HashMap</a> <a href="/tags/Hashmap/" style="font-size: 16px; color: #808080">Hashmap</a> <a href="/tags/Linked-List/" style="font-size: 16px; color: #808080">Linked List</a> <a href="/tags/Scala/" style="font-size: 16px; color: #808080">Scala</a> <a href="/tags/Sort/" style="font-size: 16px; color: #808080">Sort</a> <a href="/tags/Sublime-Text/" style="font-size: 16px; color: #808080">Sublime Text</a> <a href="/tags/markdown/" style="font-size: 16px; color: #808080">markdown</a>
-    </div>
-    <style>
-        .category-list li{
-            display: inline-block;
-            margin: 0 1em .5em 0;
-            padding: 4px;
-            border: 1px solid lightgray;
-            font-size: 1.2em;
-        }
-        .category-list a {
-            color: gray;
-        }
-        .category-list-item:hover a {
-            color: gray;
-            text-decoration: none;
-        }
-        .category-list-count {
-            margin-left: 2px;
-            font-size: .9em;
-        }
-        .article-entry ul li:before{
-            display: none;
-        }
-        .article-inner  {
-            text-align: center;
-        }
-        .tags {
-            max-width: 40em;
-            margin: 2em auto;
-            margin-top: 0em;
-        }
-        .tags a {
-            margin-right: 1em;
-            line-height: 65px;
-            border-bottom: 1px solid gray;
-            white-space: nowrap;
-        }
-        .tags a:hover {
-            border-bottom: 2px solid black;
-            text-decoration: none;
-            font-style: italic;
-        }
-        #count > span {
-            margin: auto .2em;
-            font-weight: bold;
-        }
-    </style>
-
-    <!-- Count tags and categories -->
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <p id="count">
-            已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
-            共计<span><script>document.write($(".tags > a").length)</script></span>个标签。
-    </p>
-    <script>
-        $('#count').appendTo('.count');
-    </script>
-
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/16/LeetCode242/">LeetCode-Java题解(242)</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 baichuan 的个人博客">baichuan</a></p>
+        <p><span>发布时间:</span>2017年02月16日 - 22时50分</p>
+        <p><span>最后更新:</span>2017年02月16日 - 22时55分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/16/LeetCode242/" title="LeetCode-Java题解(242)">http://yoursite.com/2017/02/16/LeetCode242/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/02/16/LeetCode242/　　作者: baichuan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/16/LeetCode49/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode-Java题解(49)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">2.</span> <span class="toc-text">Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">3.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">4.</span> <span class="toc-text">算法</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
 
 
 
@@ -379,7 +349,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="tags/index.html" data-title="tags" data-url="http://yoursite.com/tags/index.html"></div>
+    <div class="ds-thread" data-thread-key="2017/02/16/LeetCode242/" data-title="LeetCode-Java题解(242)" data-url="http://yoursite.com/2017/02/16/LeetCode242/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -399,6 +369,37 @@
     
 
 
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/02/16/LeetCode49/" title="下一篇: LeetCode-Java题解(49)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/LeetCode242/">LeetCode-Java题解(242)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/LeetCode49/">LeetCode-Java题解(49)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/02/PAT乙级1003/">PAT乙级题解(1003)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/LeetCode2/">LeetCode-Java题解(2)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/31/LeetCode1/">LeetCode-Java题解(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/18/Scala/">基于Intellij IDEA的Spark开发-Scala</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/23/Sublime Text 3入坑小记/">Sublime Text 3入坑小记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/20/markdown/">markdown格式测试</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 
