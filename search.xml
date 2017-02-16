@@ -4,6 +4,17 @@
   
     
     <entry>
+      <title><![CDATA[LeetCode-Java题解(49)]]></title>
+      <url>http://yoursite.com/2017/02/16/LeetCode49/</url>
+      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>LeetCode第49题:Group Anagrams<a id="more"></a><br>题目链接：<a href="https://leetcode.com/problems/anagrams/" target="_blank" rel="external">https://leetcode.com/problems/anagrams/</a></excerpt></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an array of strings, group anagrams together.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>For example, given: [“eat”, “tea”, “tan”, “ate”, “nat”, “bat”],<br>Return:<br>[<br>  [“ate”, “eat”,”tea”],<br>  [“nat”,”tan”],<br>  [“bat”]<br>]</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>把每一个字符串的字典序顺序串当成key，把对应字典序相同的字符串放入对应key的map里。</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public  List&lt;List&lt;String&gt;&gt; groupAnagrams(String[] strs) &#123;</div><div class="line">            <span class="keyword">if</span>(strs == null || strs.length==0)&#123;</div><div class="line">                <span class="built_in">return</span> new ArrayList&lt;&gt;();</div><div class="line">            &#125;</div><div class="line">            HashMap&lt;String,List&lt;String&gt;&gt; map = new HashMap&lt;&gt;();</div><div class="line">            <span class="keyword">for</span>(String str:strs)&#123;</div><div class="line">                char []temp = str.toCharArray();</div><div class="line">                Arrays.sort(temp);</div><div class="line">                String nstr = new String(temp);</div><div class="line">                <span class="keyword">if</span>(!map.containsKey(nstr))&#123;</div><div class="line">                    map.put(nstr,new ArrayList&lt;&gt;());</div><div class="line">                &#125;</div><div class="line">                map.get(nstr).add(str);</div><div class="line">            &#125;</div><div class="line">            <span class="built_in">return</span> new ArrayList&lt;&gt;(map.values());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[PAT乙级题解(1003)]]></title>
       <url>http://yoursite.com/2017/02/02/PAT%E4%B9%99%E7%BA%A71003/</url>
       <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>PAT乙级题解1003<a id="more"></a></excerpt></p>
