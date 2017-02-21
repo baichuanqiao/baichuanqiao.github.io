@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode-Java题解(2) | baichuan upup</title>
+  <title>LeetCode-Java题解(438) | baichuan upup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode第二题">
+  <meta name="description" content="LeetCode第438题:Find All Anagrams in a String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-Java题解(2)">
-<meta property="og:url" content="http://yoursite.com/2017/02/01/LeetCode2/index.html">
+<meta property="og:title" content="LeetCode-Java题解(438)">
+<meta property="og:url" content="http://yoursite.com/2017/02/21/LeetCode438/index.html">
 <meta property="og:site_name" content="baichuan upup">
-<meta property="og:description" content="LeetCode第二题">
-<meta property="og:updated_time" content="2017-02-01T11:53:36.997Z">
+<meta property="og:description" content="LeetCode第438题:Find All Anagrams in a String">
+<meta property="og:updated_time" content="2017-02-21T01:19:38.587Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-Java题解(2)">
-<meta name="twitter:description" content="LeetCode第二题">
+<meta name="twitter:title" content="LeetCode-Java题解(438)">
+<meta name="twitter:description" content="LeetCode第438题:Find All Anagrams in a String">
   
     <link rel="alternative" href="/atom.xml" title="baichuan upup" type="application/atom+xml">
   
@@ -214,11 +214,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode438" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/01/LeetCode2/" class="article-date">
-      <time datetime="2017-02-01T11:40:00.000Z" itemprop="datePublished">2017-02-01</time>
+      <a href="/2017/02/21/LeetCode438/" class="article-date">
+      <time datetime="2017-02-21T00:40:00.000Z" itemprop="datePublished">2017-02-21</time>
 </a>
     </div>
   
@@ -231,7 +231,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode-Java题解(2)
+      LeetCode-Java题解(438)
     </h1>
   
 
@@ -246,7 +246,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linked-List/">Linked List</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hashmap/">Hashmap</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -256,11 +256,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>LeetCode第二题<a id="more"></a><br>题目链接：<a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="external">https://leetcode.com/problems/add-two-numbers/</a></excerpt></p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.<br>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>1.设立一个头节点head和一个新节点l3,并使l3=head<br>2.两个List分别从头开始，两两相加并且设立进位flag，如果相加超过10则flag为1,否则为零。同时需要考虑一个List还有长度，另一个已经结束的情况<br>3.最后如果两个List都为空而flag为1时，要设最后一个节点的值为1<br>4.最后返回l3的下一个节点</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition <span class="keyword">for</span> singly-linked list.</div><div class="line"> * public class ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode next;</div><div class="line"> *     ListNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line">public class Solution &#123;</div><div class="line">   public ListNode addTwoNumbers(ListNode l1, ListNode l2) &#123;  </div><div class="line">        int flag = 0;  </div><div class="line">        ListNode head = new ListNode(0);  </div><div class="line">        ListNode l3 = head;  </div><div class="line">        <span class="keyword">while</span>(l1!=null ||l2!=null)&#123;  </div><div class="line">            <span class="keyword">if</span>(l1!=null)&#123;  </div><div class="line">                flag += l1.val;  </div><div class="line">                l1 = l1.next;  </div><div class="line">            &#125;  </div><div class="line">            <span class="keyword">if</span>(l2!=null)&#123;  </div><div class="line">                flag += l2.val;  </div><div class="line">                l2 = l2.next;  </div><div class="line">            &#125;  </div><div class="line">            head.next = new ListNode(flag%10);  </div><div class="line">            head=head.next;  </div><div class="line">            flag /=10;  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">if</span>(flag == 1)  </div><div class="line">            head.next = new ListNode(1);  </div><div class="line">        <span class="built_in">return</span> l3.next;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>LeetCode第438题:Find All Anagrams in a String<a id="more"></a><br>题目链接：<a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/?tab=Description" target="_blank" rel="external">https://leetcode.com/problems/find-all-anagrams-in-a-string/?tab=Description</a></excerpt></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given a string s and a non-empty string p, find all the start indices of p’s anagrams in s.<br>Strings consists of lowercase English letters only and the length of both strings s and p will not be larger than 20,100.<br>The order of output does not matter.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>Example 1:</p>
+<p>Input:<br>s: “cbaebabacd” p: “abc”</p>
+<p>Output:<br>[0, 6]</p>
+<p>Explanation:<br>The substring with start index = 0 is “cba”, which is an anagram of “abc”.<br>The substring with start index = 6 is “bac”, which is an anagram of “abc”.<br>Example 2:</p>
+<p>Input:<br>s: “abab” p: “ab”</p>
+<p>Output:<br>[0, 1, 2]</p>
+<p>Explanation:<br>The substring with start index = 0 is “ab”, which is an anagram of “ab”.<br>The substring with start index = 1 is “ba”, which is an anagram of “ab”.<br>The substring with start index = 2 is “ab”, which is an anagram of “ab”.</p>
+<h2 id="第一次的尝试"><a href="#第一次的尝试" class="headerlink" title="第一次的尝试"></a>第一次的尝试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public class Solution438 &#123;</div><div class="line">    public static List&lt;Integer&gt; findAnagrams(String s, String p) &#123;</div><div class="line">        <span class="keyword">if</span> (p.length()&gt;s.length())&#123;</div><div class="line">            <span class="built_in">return</span> new ArrayList&lt;&gt;();</div><div class="line">        &#125;</div><div class="line">        HashMap&lt;String,List&lt;Integer&gt;&gt; map = new HashMap&lt;&gt;();</div><div class="line">        char[] temp1 = p.toCharArray();</div><div class="line">        Arrays.sort(temp1);</div><div class="line">        String s1 = new String(temp1);</div><div class="line">        int len=s1.length();</div><div class="line">        map.put(s1,new LinkedList&lt;&gt;());</div><div class="line">        <span class="keyword">for</span>(int i=0;i&lt;s.length()-len+1;i++)&#123;</div><div class="line">            char []temp2 = s.substring(i,i+len).toCharArray();</div><div class="line">            Arrays.sort(temp2);</div><div class="line">            String s2 = new String(temp2);</div><div class="line">            <span class="keyword">if</span>(Arrays.equals(temp2, temp1))&#123;</div><div class="line">               map.get(s1).add(i);</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">        <span class="built_in">return</span> map.get(s1);</div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>此种方法通过了测试用例的前34个(共36个测试用例)，第35个测试用例是s:20000个a，p:10000个a，此种方法超时了。遂决定采用第二种方法，同样是用Hashmap,但在字符串的处理细节上有所不同。</p>
+<h2 id="第二次的尝试"><a href="#第二次的尝试" class="headerlink" title="第二次的尝试"></a>第二次的尝试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">public class Solution438_1 &#123;</div><div class="line">    public static List&lt;Integer&gt; findAnagrams(String s, String p) &#123;</div><div class="line">        List&lt;Integer&gt; result = new ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">if</span>(s.length()==0 ||s==null||p.length()&gt;s.length()) &#123;</div><div class="line">            <span class="built_in">return</span> result;</div><div class="line">        &#125;</div><div class="line">        Map&lt;Character,Integer&gt; map = new HashMap&lt;&gt;();</div><div class="line">        <span class="keyword">for</span>(int i=0;i&lt;p.length();i++)&#123;</div><div class="line">            char c = p.charAt(i);</div><div class="line">            <span class="keyword">if</span>(!map.containsKey(c))&#123;</div><div class="line">                map.put(c,1);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> &#123;</div><div class="line">                map.put(c,map.get(c)+1);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        int count=0;</div><div class="line">        <span class="keyword">for</span>(int i=0;i&lt;s.length();i++)&#123;</div><div class="line">            char c = s.charAt(i);</div><div class="line">            <span class="keyword">if</span>(map.containsKey(c))&#123;</div><div class="line">                map.put(c,map.get(c)-1);</div><div class="line">               int d = map.get(c);</div><div class="line">                <span class="keyword">if</span>(map.get(c)==0)&#123;</div><div class="line">                    count++;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(i&gt;=p.length())&#123;</div><div class="line">                c=s.charAt(i-p.length());</div><div class="line">                <span class="keyword">if</span>(map.containsKey(c))&#123;</div><div class="line">                    map.put(c,map.get(c)+1);</div><div class="line">                    <span class="keyword">if</span>(map.get(c)==1)&#123;</div><div class="line">                        count--;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(count==map.size())&#123;</div><div class="line">                result.add(i-p.length()+1);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">return</span> result;</div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>这次成功Accepted,但是觉得代码有点啰嗦，遂查看了Top Soliution,发现了一种滑动窗口的解法很巧妙，代码如下</p>
+<h2 id="最优解"><a href="#最优解" class="headerlink" title="最优解"></a>最优解</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Solution438_2 &#123;</div><div class="line">    public static List&lt;Integer&gt; findAnagrams(String s, String p) &#123;</div><div class="line">        List&lt;Integer&gt; list = new ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">if</span> (s == null || s.length() == 0 || p == null || p.length() == 0) <span class="built_in">return</span> list;</div><div class="line">        int[] <span class="built_in">hash</span> = new int[256]; </div><div class="line">        <span class="keyword">for</span> (char c : p.toCharArray()) &#123;</div><div class="line">            <span class="built_in">hash</span>[c]++;</div><div class="line">        &#125;</div><div class="line">        int left = 0, right = 0, count = p.length();</div><div class="line">        <span class="keyword">while</span> (right &lt; s.length()) &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="built_in">hash</span>[s.charAt(right++)]-- &gt;= 1) count--;</div><div class="line">            <span class="keyword">if</span> (count == 0) list.add(left);</div><div class="line">            <span class="keyword">if</span> (right - left == p.length() &amp;&amp; <span class="built_in">hash</span>[s.charAt(left++)]++ &gt;= 0) count++;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">return</span> list;</div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>我个人理解是：我们所感兴趣的是什么时候hash[i]全为0，可以观察到</p>
+<ul>
+<li>hash[i]的和总是大于等于0</li>
+<li>count=所有的hash[i]之和，所以每个hash[i]=0当且仅当count=0</li>
+</ul>
 
       
     </div>
@@ -269,13 +283,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/01/LeetCode2/">LeetCode-Java题解(2)</a></p>
+        <p><span>本文标题:</span><a href="/2017/02/21/LeetCode438/">LeetCode-Java题解(438)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 baichuan 的个人博客">baichuan</a></p>
-        <p><span>发布时间:</span>2017年02月01日 - 19时40分</p>
-        <p><span>最后更新:</span>2017年02月01日 - 19时53分</p>
+        <p><span>发布时间:</span>2017年02月21日 - 08时40分</p>
+        <p><span>最后更新:</span>2017年02月21日 - 09时19分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/01/LeetCode2/" title="LeetCode-Java题解(2)">http://yoursite.com/2017/02/01/LeetCode2/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/02/01/LeetCode2/　　作者: baichuan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/21/LeetCode438/" title="LeetCode-Java题解(438)">http://yoursite.com/2017/02/21/LeetCode438/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/02/21/LeetCode438/　　作者: baichuan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -288,18 +302,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/02/02/PAT乙级1003/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          PAT乙级题解(1003)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/31/LeetCode1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode-Java题解(1)</div>
+    <a href="/2017/02/16/LeetCode242/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode-Java题解(242)</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -310,7 +315,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">2.</span> <span class="toc-text">Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">3.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">4.</span> <span class="toc-text">算法</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">2.</span> <span class="toc-text">Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一次的尝试"><span class="toc-number">3.</span> <span class="toc-text">第一次的尝试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二次的尝试"><span class="toc-number">4.</span> <span class="toc-text">第二次的尝试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最优解"><span class="toc-number">5.</span> <span class="toc-text">最优解</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -358,7 +363,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2017/02/01/LeetCode2/" data-title="LeetCode-Java题解(2)" data-url="http://yoursite.com/2017/02/01/LeetCode2/"></div>
+    <div class="ds-thread" data-thread-key="2017/02/21/LeetCode438/" data-title="LeetCode-Java题解(438)" data-url="http://yoursite.com/2017/02/21/LeetCode438/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -381,13 +386,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/02/PAT乙级1003/" title="上一篇: PAT乙级题解(1003)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/01/31/LeetCode1/" title="下一篇: LeetCode-Java题解(1)">
+            <a href="/2017/02/16/LeetCode242/" title="下一篇: LeetCode-Java题解(242)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
